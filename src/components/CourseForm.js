@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 
-class CourseForm extends Component {
-  render() {
-    return (
-      <div className="CourseForm">
-        <div>CourseForm</div>
-        <br />
-      </div>
-    );
-  }
-}
+const CourseForm = (props) => {
+  return (
+    <form onSubmit={props.addCourse}>
+      <input type="text" onChange={props.updateCourse} />
+      <button type="submit">Add course</button>
+    </form>
+  );
+};
 
 export default CourseForm;

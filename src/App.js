@@ -11,20 +11,34 @@ class App extends Component {
       { name: "JavaScript" },
       { name: "React" },
     ],
+    current: "",
+  };
+
+  // Update Course
+  updateCourse = (event) => {
+    console.log(event.target.value);
+  };
+  // Add Course
+  addCourse = (event) => {
+    event.preventDefault();
+    console.log("Add Course");
   };
 
   render() {
     let { courses } = this.state;
-    let courseList = courses.map((couse, index) => {
-      return <CourseList details={couse} key={index} />;
+    let courseList = courses.map((course, index) => {
+      return <CourseList details={course} key={index} />;
     });
 
     return (
       <div className="App">
         <h2>Add Course</h2>
 
-        <CourseForm />
-        <CourseForm />
+        <CourseForm
+          updateCourse={this.updateCourse}
+          addCourse={this.addCourse}
+        />
+
         {courseList}
       </div>
     );
