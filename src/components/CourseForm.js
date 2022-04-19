@@ -1,10 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 
 const CourseForm = (props) => {
   return (
     <form onSubmit={props.addCourse}>
-      <input type="text" value={props.current} onChange={props.updateCourse} />
-      <button type="submit">Add course</button>
+      <input
+        className="CourseForm col-8"
+        type="text"
+        value={props.current}
+        onChange={props.updateCourse}
+      />
+      <button className="col-3" type="submit">Add course</button>
     </form>
   );
 };

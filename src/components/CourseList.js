@@ -8,14 +8,23 @@ class CourseList extends Component {
   // render Course Items
   renderCourse = () => {
     return (
-      <ul className="m-0">
-        <li>
-          <span>{this.props.details.name}</span>
-          <span onClick={() => this.toggleState()}>
-            <i class="fa-solid fa-pen-to-square"></i>
+      <ul className=" mt-5 list-unstyled container">
+        <li className="d-flex">
+          <p className=" col-10 ">{this.props.details.name}</p>
+          <span className="col-1" onClick={() => this.toggleState()}>
+            <i
+              class="fa-solid fa-pen-to-square"
+              style={{ color: "#00f", cursor: "pointer" }}
+            ></i>
           </span>
-          <span onClick={() => this.props.deleteCourse(this.props.index)}>
-            <i class="fa-solid fa-trash-can"></i>
+          <span
+            className="col-1"
+            onClick={() => this.props.deleteCourse(this.props.index)}
+          >
+            <i
+              class="fa-solid fa-trash-can "
+              style={{ color: "#F00", cursor: "pointer" }}
+            ></i>
           </span>
         </li>
       </ul>

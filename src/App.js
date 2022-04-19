@@ -67,7 +67,7 @@ class App extends Component {
     });
 
     return (
-      <div className="App">
+      <div className="App container text-center">
         <h2>Add Course</h2>
 
         <CourseForm
