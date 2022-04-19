@@ -8,8 +8,13 @@ const CourseForm = (props) => {
         type="text"
         value={props.current}
         onChange={props.updateCourse}
+        style={{ backgroundColor: "#EEE" }}
+        placeholder="Add Course"
+        required
       />
-      <button className="col-3" type="submit">Add course</button>
+      <button className="col-3 " type="submit">
+        Add course
+      </button>
     </form>
   );
 };

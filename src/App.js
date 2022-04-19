@@ -68,7 +68,7 @@ class App extends Component {
 
     return (
       <div className="App container text-center">
-        <h2>Add Course</h2>
+        <h2 className="mt-5 mb-5">Add Course</h2>
 
         <CourseForm
           updateCourse={this.updateCourse}

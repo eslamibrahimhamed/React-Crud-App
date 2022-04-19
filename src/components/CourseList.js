@@ -51,13 +51,15 @@ class CourseList extends Component {
     return (
       <form onSubmit={this.updateCourseItem}>
         <input
+        className="col-8 mt-5 text-center"
           type="text"
           ref={(value) => {
             this.input = value;
           }}
           defaultValue={this.props.details.name}
+          style={{backgroundColor:'#EEE'}}
         />
-        <button>Update Course</button>
+        <button className="col-3">Update Course</button>
       </form>
     );
   };
