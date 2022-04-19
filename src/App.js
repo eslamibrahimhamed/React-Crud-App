@@ -32,10 +32,38 @@ class App extends Component {
     });
   };
 
+  //  Delete Courses
+  deleteCourse = (index) => {
+    let courses = this.state.courses;
+    courses.splice(index, 1);
+    this.setState({
+      courses: courses,
+    });
+  };
+
+  // Edit Course
+
+  editCourse = (index, value) => {
+    let courses = this.state.courses;
+    let course = courses[index];
+    course["name"] = value;
+    this.setState({
+      courses: courses,
+    });
+  };
+
   render() {
     let { courses } = this.state;
     let courseList = courses.map((course, index) => {
-      return <CourseList details={course} key={index} />;
+      return (
+        <CourseList
+          details={course}
+          key={index}
+          index={index}
+          deleteCourse={this.deleteCourse}
+          editCourse={this.editCourse}
+        />
+      );
     });
 
     return (
