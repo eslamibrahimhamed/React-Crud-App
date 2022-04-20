@@ -83,6 +83,15 @@ class CourseList extends Component {
         >
           Update Course
         </Button>
+        <Button
+          type="submit"
+          className="col-3  m-bottom"
+          variant="contained"
+          color="success"
+          style={{ verticalAlign: "1.5px" }}
+        >
+          Close
+        </Button>
       </form>
     );
   };
