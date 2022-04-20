@@ -1,7 +1,23 @@
-.App { 
-  border:  1px solid #CCC;
+.App {
+  border: 1px solid #ccc;
   margin-top: 20%;
-  
 }
 
+.form-control {
+  width: 66.66666667%;
+
+  display: inline-block;
+}
+
+.form-control:focus {
+  box-shadow: 0 3px 10px 0 rgb(34 41 47 / 10%) !important;
+}
+
+.btn {
+  vertical-align: top !important;
+}
 /* .eslam li{ display: flex;} */
+
+.m-bottom:last-of-type {
+  margin-bottom: 2rem;
+}

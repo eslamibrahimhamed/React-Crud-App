@@ -3,6 +3,7 @@ import CourseForm from "./components/CourseForm";
 import CourseList from "./components/CourseList";
 import "./App.css";
 
+
 class App extends Component {
   state = {
     courses: [
@@ -77,6 +78,7 @@ class App extends Component {
         />
 
         {courseList}
+        
       </div>
     );
   }

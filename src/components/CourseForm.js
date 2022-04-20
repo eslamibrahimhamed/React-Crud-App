@@ -1,10 +1,12 @@
 import React from "react";
+import { Button, Input } from "reactstrap";
+import ButtonMUI from "@mui/material/Button";
 
 const CourseForm = (props) => {
   return (
     <form onSubmit={props.addCourse}>
-      <input
-        className="CourseForm col-8"
+      <Input
+        className="CourseForm col-8 text-center"
         type="text"
         value={props.current}
         onChange={props.updateCourse}
@@ -12,9 +14,11 @@ const CourseForm = (props) => {
         placeholder="Add Course"
         required
       />
-      <button className="col-3 " type="submit">
+      <ButtonMUI className="col-3 btn" type="submit" variant="contained">
         Add course
-      </button>
+      </ButtonMUI>
+
+     
     </form>
   );
 };

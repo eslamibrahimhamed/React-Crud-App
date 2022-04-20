@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+import Tooltip from "@mui/material/Tooltip";
+import Button from "@mui/material/Button";
+import Zoom from "@mui/material/Zoom";
+
 class CourseList extends Component {
   state = {
     isEdit: false,
@@ -10,21 +14,31 @@ class CourseList extends Component {
     return (
       <ul className=" mt-5 list-unstyled container">
         <li className="d-flex">
-          <p className=" col-10 ">{this.props.details.name}</p>
+          <p className=" col-7 ">{this.props.details.name}</p>
           <span className="col-1" onClick={() => this.toggleState()}>
-            <i
-              class="fa-solid fa-pen-to-square"
-              style={{ color: "#00f", cursor: "pointer" }}
-            ></i>
+            <Tooltip title="Edit" placement="top">
+              <Button>
+                <i
+                  class="fa-solid fa-pen-to-square"
+                  style={{ color: "#00f", cursor: "pointer" }}
+                ></i>
+              </Button>
+            </Tooltip>
           </span>
+
           <span
             className="col-1"
             onClick={() => this.props.deleteCourse(this.props.index)}
           >
-            <i
-              class="fa-solid fa-trash-can "
-              style={{ color: "#F00", cursor: "pointer" }}
-            ></i>
+            <Tooltip TransitionComponent={Zoom} title="Delete">
+              <Button>
+                {" "}
+                <i
+                  class="fa-solid fa-trash-can "
+                  style={{ color: "#F00", cursor: "pointer" }}
+                ></i>
+              </Button>
+            </Tooltip>
           </span>
         </li>
       </ul>
@@ -51,15 +65,24 @@ class CourseList extends Component {
     return (
       <form onSubmit={this.updateCourseItem}>
         <input
-        className="col-8 mt-5 text-center"
+          className="col-8 mt-5 text-center form-control m-bottom"
           type="text"
           ref={(value) => {
             this.input = value;
           }}
           defaultValue={this.props.details.name}
-          style={{backgroundColor:'#EEE'}}
+          style={{ backgroundColor: "#EEE" }}
         />
-        <button className="col-3">Update Course</button>
+
+        <Button
+          type="submit"
+          className="col-3  m-bottom"
+          variant="contained"
+          color="success"
+          style={{ verticalAlign: "1.5px" }}
+        >
+          Update Course
+        </Button>
       </form>
     );
   };
